@@ -18,6 +18,7 @@ const courseSchema = new Schema({
 
 const Course = model('playground', courseSchema);
 
+// creating course
 async function createCourse() {
   const course = new Course({
     name: 'Angular.js course',
@@ -29,4 +30,13 @@ async function createCourse() {
   console.log(result);
 }
 
-createCourse();
+// createCourse();
+
+// getting course(s) from the database
+
+async function getCourses() {
+  const result = await Course.find();
+  console.log(result);
+}
+
+getCourses();
