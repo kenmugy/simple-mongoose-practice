@@ -21,9 +21,9 @@ const Course = model('playground', courseSchema);
 // creating course
 async function createCourse() {
   const course = new Course({
-    name: 'Angular.js course',
-    author: 'kenmugy',
-    tags: ['angular', 'frontend'],
+    name: 'React.js course',
+    author: 'mosh',
+    tags: ['react', 'frontend'],
     isPublished: false
   });
   const result = await course.save();
@@ -35,7 +35,12 @@ async function createCourse() {
 // getting course(s) from the database
 
 async function getCourses() {
-  const result = await Course.find();
+  const result = await Course.find({
+    author: /kenmugy/i
+  })
+    .limit(4)
+    .sort('name')
+    .select('name author isPublished');
   console.log(result);
 }
 
