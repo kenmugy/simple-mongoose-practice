@@ -1,0 +1,10 @@
+{
+  "name": "Mongodb-prac",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "ken-mugy",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^5.6.12"
+  }
+}
